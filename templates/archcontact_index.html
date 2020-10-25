@@ -1,0 +1,34 @@
+<{$contactform.javascript}>
+<form name="<{$contactform.name}>" action="<{$contactform.action}>" method="<{$contactform.method}>" <{$contactform.extra}>>
+
+<br>
+  <table class="outer" cellspacing="1" align="center">
+    <tr>
+    <th style="text-align:center;" colspan="2"><{$ac_archcontact}></th>
+    </tr>
+    <!-- start of form elements loop -->
+    <{foreach item=element from=$contactform.elements}>
+      <{if $element.hidden !== true}>
+      <tr>
+        <td class="head"><{$element.caption}></td>
+        <td class="<{cycle values="even,odd"}>"><{$element.body}></td>
+      </tr>
+      <{else}>
+      <{$element.body}>
+      <{/if}>
+    <{/foreach}>
+    <!-- end of form elements loop -->
+  </table>
+  <table align="center" cellspacing="0" >
+  <tr>
+    <td style="font-weight:normal;" align="right"><span class="itemPoster"><{$ac_copyright}></span></td>
+  </tr>
+</table>
+</form>
+
+
+
+
+
+
+
